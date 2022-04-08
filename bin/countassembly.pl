@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 # assembly stat
-# AUTHOR: Dr. Richard Allen White III
+# AUTHOR: Joseph Fass (modified from script by Brad Sickler and Dr. Richard Allen White III)
 # LAST REVISED: Aug 2018
 
 use strict;
