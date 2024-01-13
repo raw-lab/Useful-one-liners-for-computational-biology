@@ -2,6 +2,18 @@
 
 ## Convert 
 
+### Remove duplicates from blast, sword, or diamond file (Top Hit keep) based on column
+
+#### Based on first column
+```
+awk '!a[$1]++ file
+```
+
+#### Based on second column
+```
+awk '!a[$2]++ file
+```
+
 ### Convert fastq to fasta
 
 #### Option 1
