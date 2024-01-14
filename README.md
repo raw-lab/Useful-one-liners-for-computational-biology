@@ -1,6 +1,6 @@
 # Useful one-liners for computational biology
 
-## Convert 
+## Format
 
 ### Remove duplicates from blast, sword, or diamond file (Top Hit keep) based on column
 
@@ -13,6 +13,27 @@ awk '!a[$1]++ file
 ```
 awk '!a[$2]++ file
 ```
+
+### Format locus tag and product names (gene number/gene name) in Genbank file
+
+#### side by side
+```
+awk '/locus_tag="G_[0-9]*"/ {tag=$0; getline; if ($0 ~ /note="(.+)"/) {gsub(/note="/, "", $0); gsub(/"$/, "", $0); print substr(tag,14) " " substr($0,1,100)}}' NCBI_annotation.gb
+```
+
+#### Extract locus tag and product name
+```
+awk '/locus_tag="G_[0-9]*"/ {tag=$0; getline; if ($0 ~ /note=".+"/) print tag "\n" $0}' NCBI_annotation.gb
+```
+
+## Merge
+
+#### Merge two tsvs in awk
+```
+awk 'FNR==NR{a[$1]=$0; next} {print a[$1],$0}' file1.tsv file2.tsv > combined.tsv
+```
+
+## Convert 
 
 ### Convert fastq to fasta
 
