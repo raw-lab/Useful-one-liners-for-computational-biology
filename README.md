@@ -289,17 +289,17 @@ mafft --thread -1 --auto --clustalout file.fasta > file_local.clust
 
 #### Protein Based Tree
 ```
-iqtree2 -s file_local.clust -st AA -m TEST -bb 1000 -alrt 1000
+iqtree2 -s file_local.clust -st AA -m TEST -B 1000 -alrt 1000
 ```
 
 #### Nucleotide (DNA) Based Tree
 ```
-iqtree2 -s file_local.clust -st DNA -m TEST -bb 1000 -alrt 1000
+iqtree2 -s file_local.clust -st DNA -m TEST -B 1000 -alrt 1000
 ```
 
-#### Multithreading (Auto Detect Cores)
+#### Multithreading (Auto Detect Cores, Alignment Type (Default), and Model Type (Default))
 ```
-iqtree2 -s file_local.clust -st AA -m TEST -bb 1000 -alrt 1000 -T AUTO
+iqtree2 -s file_local.clust -B 1000 -alrt 1000 -T AUTO
 ```
 
 ### Tree Annotator 
