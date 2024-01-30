@@ -272,27 +272,37 @@ bowtie2 -p number of threads -x db -q R1.fastq -S local.sam --very-sensitive-loc
 
 #### Local
 ```
-mafft --localpair --maxiterate 1000 --clustalout file.fasta >file_local.clust
+mafft --localpair --maxiterate 1000 --clustalout file.fasta > file_local.clust
 ```
 
 #### Global
 ```
-mafft --globalpair --maxiterate 1000 --clustalout file.fasta >file_global.clust
+mafft --globalpair --maxiterate 1000 --clustalout file.fasta > file_global.clust
+```
+
+#### Multithreading (Auto Detect Cores) and Automatically Select Best Strategy
+```
+mafft --thread -1 --auto --clustalout file.fasta > file_local.clust
 ```
 
 ### IQ-Tree2
 
-#### Protein based Tree
+#### Protein Based Tree
 ```
 iqtree2 -s file_local.clust -st AA -m TEST -bb 1000 -alrt 1000
 ```
 
-#### Nucleotide (DNA) based Tree
+#### Nucleotide (DNA) Based Tree
 ```
 iqtree2 -s file_local.clust -st DNA -m TEST -bb 1000 -alrt 1000
 ```
 
-### Tree annotator 
+#### Multithreading (Auto Detect Cores)
+```
+iqtree2 -s file_local.clust -st AA -m TEST -bb 1000 -alrt 1000 -T AUTO
+```
+
+### Tree Annotator 
 ```
 tree_annotator.py annotation.csv treefile output
 ```
