@@ -2,6 +2,11 @@
 
 ## Format
 
+### Convert png to pdf
+```
+python png_to_pdf.py input.png output.pdf --resolution 600
+```
+
 ### Remove duplicates from blast, sword, or diamond file (Top Hit keep) based on column
 
 #### Based on first column
