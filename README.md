@@ -2,6 +2,11 @@
 
 ## Format
 
+### Convert fasta nucleotide file (fna) to dummy fastq (bbmap)
+```
+reformat.sh -Xms1g in=test.fna out=test.fq qfake=35
+```
+
 ### Convert png to pdf
 ```
 python png_to_pdf.py input.png output.pdf --resolution 600
