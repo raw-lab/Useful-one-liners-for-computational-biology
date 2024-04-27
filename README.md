@@ -2,6 +2,15 @@
 
 ## Format
 
+### Convert vsi to png/jpg/tiff
+```
+#Example command line (single file)
+python vsi_converter.py input_file.vsi -o output_file.jpg -f jpeg
+
+#Example command line (many files)
+python vsi_converter.py input_folder -f tif -d
+```
+
 ### Convert fasta nucleotide file (fna) to dummy fastq (bbmap)
 ```
 reformat.sh -Xms1g in=test.fna out=test.fq qfake=35
