@@ -16,6 +16,11 @@ python vsi_converter.py input_folder -f tif -d
 reformat.sh -Xms1g in=test.fna out=test.fq qfake=35
 ```
 
+### Remove everything after the regex match (:)
+```
+awk -F '\\:' '{print $1}' file.tsv >>file_fixed.tsv
+```
+
 ### Convert png to pdf
 ```
 python png_to_pdf.py input.png output.pdf --resolution 600
