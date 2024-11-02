@@ -190,6 +190,11 @@ grep "@" file.fastq | wc -l
 
 ### Rename many files
 
+####
+```
+for file in *.fasta; do mv "$file" "$(echo "$file" | tr -d ' ' | sed 's/ /_/g' | sed 's/\.fasta$/.fna/')"; done
+```
+
 #### 
 ```
 for i in *NAME*; do mv $i ${i/NAME/NEW_NAME}; done;
